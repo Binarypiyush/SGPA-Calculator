@@ -2,8 +2,6 @@
 
 A simple, responsive **SGPA (Semester Grade Point Average)** calculator created by **Academic Avengers**. This web-based tool allows students to input their subjects, credit hours, and grades to calculate their SGPA instantly.
 
-![Preview](https://yourusername.github.io/sgpa-calculator/assets/preview.png) <!-- Optional: add a screenshot here -->
-
 ---
 
 ## 🚀 Live Demo
