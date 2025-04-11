@@ -9,7 +9,7 @@ A simple, responsive **SGPA (Semester Grade Point Average)** calculator created 
 
 ## 🚀 Live Demo
 
-👉 **[Click Here to Try It Out](https://yourusername.github.io/sgpa-calculator/)**
+👉 **[Click Here to Try It Out](https://sgpaacademicavengers.netlify.app/)**
 
 ---
 
