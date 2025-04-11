@@ -2,12 +2,6 @@
 
 ![Moving Banner](https://img.shields.io/badge/Academic%20Avengers-SGPA%20Calculator%20🔥-blueviolet?style=for-the-badge&logo=github&logoColor=white)
 
-<marquee behavior="scroll" direction="left" scrollamount="6">
-  🎉 Welcome to the SGPA Calculator Project by Academic Avengers – Calculate your semester grades in seconds! 📚✨
-</marquee>
-
-
-
 A simple, responsive **SGPA (Semester Grade Point Average)** calculator created by **Academic Avengers**. This web-based tool allows students to input their subjects, credit hours, and grades to calculate their SGPA instantly.
 
 ---
