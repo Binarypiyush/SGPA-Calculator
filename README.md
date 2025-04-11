@@ -54,7 +54,7 @@ Edit
 
 Developed by **[PIYUSH](https://linkedin.com/in/binarypiyush)**  
 
-<a href="https://academicavengers.in/tools#features" target="_blank">
+<a href="https://linkedin.com/in/binarypiyush" target="_blank">
   <img src="https://img.shields.io/badge/Made%20with%20%E2%9D%A4%20by-Academic%20Avengers-orange?style=for-the-badge" alt="Moving Banner">
 </a>
 
