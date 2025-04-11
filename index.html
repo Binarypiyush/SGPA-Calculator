@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator by Academic Avengers</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SGPA Calculator</h1>
+
+        <div class="form-container">
+            <input type="text" id="subjectName" placeholder="Subject Name">
+            <input type="number" id="creditHours" placeholder="Credit Hours">
+            <select id="grade">
+                <option value="10">A+</option>
+                <option value="9">A</option>
+                <option value="8">B+</option>
+                <option value="7">B</option>
+                <option value="6">C+</option>
+                <option value="5">C</option>
+                <option value="4">D</option>
+                <option value="0">E</option>
+                <option value="0">F</option>
+                <option value="0">I</option>
+            </select>
+            <button class="button" onclick="addGrade()">Add</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject Name</th>
+                    <th>Credit Hours</th>
+                    <th>Grade</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="gradesTable">
+                <!-- Rows will be added dynamically -->
+            </tbody>
+        </table>
+
+        <button class="button calculate" onclick="calculateSGPA()">Calculate SGPA</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 <a href="https://t.me/academicavengerscu" target="_blank">Academic Avengers</a>. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const grades = [];
+
+        function addGrade() {
+            const subjectName = document.getElementById('subjectName').value;
+            const creditHours = parseInt(document.getElementById('creditHours').value);
+            const gradePoint = parseInt(document.getElementById('grade').value);
+
+            if (!subjectName || isNaN(creditHours) || isNaN(gradePoint)) {
+                alert('Please fill all fields correctly.');
+                return;
+            }
+
+            grades.push({ subjectName, creditHours, gradePoint });
+            renderTable();
+
+            // Clear inputs
+            document.getElementById('subjectName').value = '';
+            document.getElementById('creditHours').value = '';
+            document.getElementById('grade').value = '10';
+        }
+
+        function removeGrade(index) {
+            grades.splice(index, 1);
+            renderTable();
+        }
+
+        function renderTable() {
+            const tableBody = document.getElementById('gradesTable');
+            tableBody.innerHTML = '';
+
+            grades.forEach((grade, index) => {
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td>${grade.subjectName}</td>
+                    <td>${grade.creditHours}</td>
+                    <td>${getGradeText(grade.gradePoint)}</td>
+                    <td><button class="remove-button" onclick="removeGrade(${index})">Remove</button></td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function calculateSGPA() {
+            let totalGradePoints = 0;
+            let totalCreditHours = 0;
+
+            grades.forEach(({ creditHours, gradePoint }) => {
+                totalGradePoints += gradePoint * creditHours;
+                totalCreditHours += creditHours;
+            });
+
+            const sgpa = (totalGradePoints / totalCreditHours).toFixed(2);
+            document.getElementById('result').textContent = `Your SGPA: ${sgpa}`;
+        }
+
+        function getGradeText(gradePoint) {
+            const gradeMap = {
+                10: 'A+', 9: 'A', 8: 'B+', 7: 'B', 6: 'C+',
+                5: 'C', 4: 'D', 0: 'E/F/I'
+            };
+            return gradeMap[gradePoint] || '';
+        }
+    </script>
+</body>
+</html>
