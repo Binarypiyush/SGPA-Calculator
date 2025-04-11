@@ -52,7 +52,7 @@ Edit
 
 ## 🙌 Credits
 
-Developed by **[PIYUSH](https://t.me/academicavengerscu)**  
+Developed by **[PIYUSH](linkedin.com/in/binarypiyush)**  
 
 ![Moving Banner](https://img.shields.io/badge/Made%20with%20%E2%9D%A4%20by-Piyush%20-orange?style=for-the-badge)
 
